@@ -1,0 +1,250 @@
+#:import win kivy.core.window
+#:import NavigationDrawer kivy.garden.navigationdrawer
+<Navigator>:
+	NavigationDrawer:
+		side_panel_width: min(dp(150), 0.5*self.width)
+		id: nd
+<Button>:
+    markup: True
+<Label>:
+    markup: True
+<FloatInput>:
+<TitleButton>:
+<ContentButton>:
+<SettingsContents>:
+	orientation: 'vertical'
+	Label:
+		text: 'Buffer Time'
+	BoxLayout:
+		Label:
+			text: 'Between Jobs'
+			text_size: self.size
+			halign: 'left'
+		FloatInput:
+			id: setjbuffer
+			text: root.jbuffer
+		Label:
+			size_hint_x: .3
+			text: 'hrs'
+	BoxLayout:
+		Label:
+			text: 'Between Procedures'
+			text_size: self.size
+			halign: 'left'
+		FloatInput:
+			id: setpbuffer
+			text: root.pbuffer
+		Label:
+			size_hint_x: .3
+			text: 'hrs'
+	Label:
+	Label:
+		text: 'Similar Orders Offsets'
+	BoxLayout:
+		orientation: 'horizontal'
+		Label:
+			text: 'Qty'
+			text_size: self.size
+			halign: 'left'
+		FloatInput:
+			id: setqoffset
+			text: root.qoffset
+		Label:
+			size_hint_x: .3
+			text: ''
+	BoxLayout:
+		Label:
+			text: 'Sections'
+			text_size: self.size
+			halign: 'left'
+		FloatInput:
+			id: setsoffset
+			text: root.soffset
+		Label:
+			size_hint_x: .3
+			text: ''
+	BoxLayout:
+		Label:
+			text: 'RAP Date'
+			text_size: self.size
+			halign: 'left'
+		FloatInput:
+			id: setroffset
+			text: root.roffset
+		Label:
+			size_hint_x: .3
+			text: 'day(s)'
+	Label:
+	Label:
+		text: 'Bat Algorithm'
+	BoxLayout:
+		Label:
+			text: 'LNX Max'
+			text_size: self.size
+			halign: 'left'
+		FloatInput:
+			id: setlnsmax
+			text: root.LNSmax
+		Label:
+			size_hint_x: .3
+			text: ''
+	BoxLayout:
+		Label:
+			text: 'Time Limit'
+			text_size: self.size
+			halign: 'left'
+		FloatInput:
+			id: settimelimit
+			text: root.timelimit
+		Label:
+			size_hint_x: .3
+			text: 'min'
+	Label:
+	Label:
+		text: 'Report'
+	BoxLayout:
+		Label:
+			text: 'Report for Permutations'
+		Spinner:
+			id: setpermsreport
+			text: root.permsreport
+			values: ('None','All','Only Best Results')
+			pos_hint: {'center_x': .5, 'center_y': .5}
+	Button:
+		text: 'Apply'
+		on_release: root.ApplySettings()
+<AddPanel>:
+	orientation: 'vertical'
+	BoxLayout:
+		BoxLayout:
+			orientation: 'vertical'
+			Label:
+				text: 'JO#'
+			Label:
+				text: 'Qty'
+			Label:
+				text: 'No. of Sheets'
+			Label:
+				text: 'Income Date'
+			Label:
+				text: 'RAP Date'
+			Label:
+				text: 'P/L Date'
+			Label:
+				text: 'Sections'
+		BoxLayout:
+			id: addvalues
+			orientation: 'vertical'
+			TextInput:
+			TextInput:
+			TextInput:
+			TextInput:
+			TextInput:
+			TextInput:
+			TextInput:
+	Button:
+		size_hint_y: .15
+		text: 'Submit'
+		on_release: root.Submit()
+
+<OrderInfoPanel>:
+	orientation: 'vertical'
+	BoxLayout:
+		Label:
+			size_hint_x: .5
+		Label:
+			text: 'Sheet'
+		Label
+			text: 'Print'
+		Label
+			text: 'Fold'
+		Label
+			text: 'Foldnip'
+		Label
+			text: 'Nip'
+		Label
+			text: 'Collate'
+		Label
+			text: 'Sew'
+		Label
+			text: 'Casein'
+		Label
+			text: 'Machines'
+	BoxLayout:
+		Label:
+		Label:
+			text: 'start'
+		Label:
+			text: 'end'
+		Label:
+			text: 'start'
+		Label:
+			text: 'end'
+		Label:
+			text: 'start'
+		Label:
+			text: 'end'
+		Label:
+			text: 'start'
+		Label:
+			text: 'end'
+		Label:
+			text: 'start'
+		Label:
+			text: 'end'
+		Label:
+			text: 'start'
+		Label:
+			text: 'end'
+		Label:
+			text: 'start'
+		Label:
+			text: 'end'
+		Label:
+			text: 'start'
+		Label:
+			text: 'end'
+		Label:
+			text: 'print'
+		Label:
+			text: 'fold'
+
+<Slide0Header>:
+	size_hint_y: .1
+	TitleButton:
+		text: 'JO#'
+	TitleButton:
+		text: 'Qty.'
+	TitleButton:
+		text: 'Sections'
+	TitleButton:
+		text: 'Sheets'
+	TitleButton:
+		text: 'RAP Date'
+	TitleButton:
+		text: 'Time till Due'
+	TitleButton:
+		text: 'Progress'
+	TitleButton:
+		text: 'Status'
+
+<Slide1Header>:
+	size_hint_y: .1
+	TitleButton:
+		text: 'JO#'
+	TitleButton:
+		text: 'Sheet'
+	TitleButton:
+		text: 'Print'
+	TitleButton:
+		text: 'Fold'
+	TitleButton:
+		text: 'Nip'
+	TitleButton:
+		text: 'Collate'
+	TitleButton:
+		text: 'Sew'
+	TitleButton:
+		text: 'Casein'
+	TitleButton:
+		text: 'Finish'

@@ -240,7 +240,7 @@ class TestScheduler(App):
 		self.sectionsoffset = 2
 		self.rapdateoffset = 7
 		self.permsreport = 'None'
-		self.orderpath = './ORDERS_10.txt'
+		self.orderpath = './orders/ORDERS_10.txt'
 		self.orders = ReadOrders(self.orderpath)
 		# CALCULATIONS VAR
 		self.signal = 'run'
